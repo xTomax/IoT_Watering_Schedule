@@ -6,6 +6,8 @@ pass_ = "2good4you"
 
 def do_connect():
     import network
+    ap_if = network.WLAN(network.AP_IF)
+    ap_if.active(False)
     sta_if = network.WLAN(network.STA_IF)
     if not sta_if.isconnected():
         print("Connecting to network {}... ".format(ssid_))
